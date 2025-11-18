@@ -1,12 +1,13 @@
 "use client";
-import { Button } from "@/components/ui/button";
+
 import Link from "next/link";
 import Image from "next/image";
+import { AuthRegisterForm } from "@/components/forms/author/auth-register-form";
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-24">
+    <main >
       
       <nav className="navbar">
         <div>
@@ -18,20 +19,9 @@ export default function Home() {
             priority
           />
         </div>
-        <ul>
-          <li>
-            <Link href="/signin">
-              <Button >Sign In</Button>
-            </Link>
-          </li>
-          <li>
-            <Link href="/signup">
-              <Button>Sign Up</Button>
-            </Link>
-          </li>
-        </ul>
       </nav>
-      <h1 className="text-4xl font-bold mb-8">Welcome to Jida System</h1>
+      <h1 >Welcome to Jida System</h1>
+      
     </main>
   );
 }
