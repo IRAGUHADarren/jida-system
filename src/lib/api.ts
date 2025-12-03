@@ -1,7 +1,7 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
 export async function loginAuthor(email: string, password: string) {
-    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+    const response = await fetch(`${API_BASE_URL}/api/authors/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function registerAuthor(data: {
     password: string;
     name: string;
 }) {
-    const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
+    const response = await fetch(`${API_BASE_URL}/api/authors/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
