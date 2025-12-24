@@ -2,7 +2,7 @@
 import {Mail,Lock,Eye,EyeOff} from "lucide-react";
 import React, {useState,useEffect} from "react";
 import { useRouter } from "next/navigation";
-import { loginAuthor } from "@/lib/api";
+import { login } from "@/lib/api";
 
 export function AuthLoginForm() {
     const [showPassword,setShowPassword]=useState(false);
@@ -45,11 +45,24 @@ export function AuthLoginForm() {
         const password = formData.get("password") as string;
 
         try {
-            const data = await loginAuthor(email, password);
+            const data = await login(email, password);
             localStorage.setItem("token", data.token);
-            router.push("/dashboard");
+            localStorage.setItem("userRole", data.role);
+            localStorage.setItem("userEmail", data.email);
+            
+            // Redirect based on role
+            if (data.role === "AUTHOR") {
+                router.push("/dashboard/author");
+            } else if (data.role === "REVIEWER") {
+                router.push("/dashboard/reviewer");
+            } else if (data.role === "EDITOR") {
+                router.push("/dashboard/editor");
+            } else {
+                router.push("/dashboard");
+            }
         } catch (err) {
             setError(err instanceof Error ? err.message : "Login failed");
+            console.error("Login error:", err);
         } finally {
             setLoading(false);
         }
