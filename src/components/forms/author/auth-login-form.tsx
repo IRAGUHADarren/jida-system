@@ -4,6 +4,7 @@ import React, {useState,useEffect} from "react";
 import { useRouter } from "next/navigation";
 import { login } from "@/lib/api";
 
+
 export function AuthLoginForm() {
     const [showPassword,setShowPassword]=useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -46,19 +47,20 @@ export function AuthLoginForm() {
 
         try {
             const data = await login(email, password);
+
             localStorage.setItem("token", data.token);
             localStorage.setItem("userRole", data.role);
             localStorage.setItem("userEmail", data.email);
-            
+            console.log("Login successful:", data);
             // Redirect based on role
             if (data.role === "AUTHOR") {
-                router.push("/dashboard/author");
+                router.push("/dashboard/author  ");
             } else if (data.role === "REVIEWER") {
                 router.push("/dashboard/reviewer");
             } else if (data.role === "EDITOR") {
                 router.push("/dashboard/editor");
             } else {
-                router.push("/dashboard");
+                router.push("/dashboard/author");
             }
         } catch (err) {
             setError(err instanceof Error ? err.message : "Login failed");

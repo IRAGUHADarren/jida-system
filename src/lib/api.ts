@@ -17,7 +17,7 @@ function getAuthHeadersFormData(): HeadersInit {
 
 // Auth APIs
 export async function login(email: string, password: string, role: string = "AUTHOR") {
-    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+    const response = await fetch(`${API_BASE_URL}/api/authors/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

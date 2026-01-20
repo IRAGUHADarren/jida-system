@@ -10,21 +10,28 @@
   font-family: Poppins, sans-serif;
 }
 body {
-    display:flex;
+    /* display:flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url(/images/Campuses.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+   
     background-color: transparent !important;
-    transition: all 1s ease-in-out;
-    
+    transition: all 1s ease-in-out;  */
+}
+main#home-page{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/images/Campuses.png);
+  background-repeat: no-repeat;
+ background-size: cover;
 }
 body.auth-page{
   justify-content: flex-start;
   background-position: right center;
+  background-color: #fff;
   padding-right: 50px;
 }
 
@@ -51,7 +58,7 @@ section{
  
 }
 h1{
-  font-size: 2rem;
+  font-size: 3rem;
   color: #fff;
   text-align: center; 
 }
