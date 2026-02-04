@@ -166,9 +166,7 @@ button:hover{
 
 
 @layer base {
-  * {
-    
-  }
+  
   body {
      color: var(--foreground);
     
