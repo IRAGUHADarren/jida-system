@@ -5,7 +5,10 @@ import { useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
-  
+  const token =  localStorage.getItem("token")
+  if(!token){
+    router.push("/login");
+  }
   useEffect(() => {
     // Ensure auth-page class is removed on home page
     document.body.classList.remove('auth-page');
