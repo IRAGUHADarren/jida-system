@@ -15,15 +15,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
-      <h1>Welcome to the Journal of Inter Discourse Academia</h1>
+    <main style={{backgroundColor:"dark"}}>
+      <h1 style={{textTransform:"uppercase", fontWeight:"bolder", fontSize:"5rem"}}>Welcome to the Journal of <br/>Inter Discourse Academia</h1>
       <nav>
-        <Button variant="outline" size="default" onClick={() => router.push("/login")}>
-          Login
-        </Button>
-        <Button variant="outline" size="icon" onClick={() => router.push("/register")}>
-          Register
-        </Button>
       </nav>
     </main>
   );
