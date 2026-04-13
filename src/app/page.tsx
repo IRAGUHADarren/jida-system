@@ -16,7 +16,8 @@ export default function Home() {
 
   return (
     <main style={{backgroundColor:"dark"}}>
-      <h1 style={{textTransform:"uppercase", fontWeight:"bolder", fontSize:"5rem"}}>Welcome to the Journal of <br/>Inter Discourse Academia</h1>
+      <h1 style={{textTransform:"uppercase", fontWeight:"bolder", fontSize:"2rem"}}>Welcome to the Journal of <br/>Inter Discourse Academia</h1>
+      <button onClick={() => router.push("/login")}>Login</button>
       <nav>
       </nav>
     </main>
