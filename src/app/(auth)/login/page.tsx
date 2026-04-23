@@ -1,5 +1,5 @@
 "use client";
-import { AuthLoginForm } from "@/components/forms/author/auth-login-form";
+import { UnifiedLoginForm } from "@/components/forms/auth/unified-login-form";
 import { useEffect } from "react";
 
 export default function LoginRoute() {
@@ -16,5 +16,5 @@ export default function LoginRoute() {
     };
   }, []);
 
-  return <AuthLoginForm />;
+  return <UnifiedLoginForm />;
 }
